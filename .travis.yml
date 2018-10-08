@@ -3,6 +3,6 @@ services:
  - docker
 
 script:
-  - docker build -t svenmoj/visits
+  - docker build -t "$DOCKER_ID"/visits
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker push svenmoj/visits
+  - docker push "$DOCKER_ID"/visits
